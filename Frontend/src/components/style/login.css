@@ -1,0 +1,53 @@
+.nav{
+    background-color: black;
+    width: 100%;
+    height: 60px;   
+}
+.logincontainer{
+    height:calc(100vh - 60px);
+    background-image: linear-gradient(to right, #5f7586, #0e6360);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+.loginform{
+    display: flex;
+    flex-direction: column;
+    width: 330px;
+    height: 280px;
+    border-radius: 5px;
+    background-color: white;
+    padding: 20px;
+    color: #13B6B0;
+}
+.registerlink{
+    text-decoration: none;
+    font-size: 12px;
+    color: #0095F6;
+    margin-top: 5px;
+    margin-left: 44px;
+}
+.logininput{
+    width: 70%;
+    padding: 10px 5px;
+    margin-left: 15%;
+    height: 30px;
+    margin-top: 10px;
+}
+.logininput :focus {
+    outline: none;
+  }
+.loginform h1{
+    margin-bottom: 20px;
+}
+.loginbutton{
+    text-decoration: none;
+    background-image: linear-gradient(to right, #5f7586, #0e6360);
+    max-width: 100px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    margin-top: 20px;
+    margin-left: 100px;
+}

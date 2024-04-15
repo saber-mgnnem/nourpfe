@@ -1,0 +1,116 @@
+.contactcontainer {
+    width: 100%;
+    height: 120vh;
+    background-image: linear-gradient(to right, #6dc0db, #194f4d,#170D25);
+    display: flex;
+    flex-direction: column;
+}
+
+.topside {
+    padding-top: 40px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.topside h1 {
+    font-size: 59px;
+    color: #13B6B0;
+}
+
+.topside p {
+    margin-top: 30px;
+    font-size: 20px;
+    color: white;
+}
+
+.leftsidecontact img {
+    height: 300px;
+    width: auto;
+}
+
+.buttomside {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+
+.leftsidecontact {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+.rightsidecontact {
+    backdrop-filter: blur(5px); /* Standard syntax */
+    -webkit-backdrop-filter: blur(5px);    /* Adjust the blur radius as needed */
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Adjust the background color and opacity as needed */
+    width: 50%;
+    height: 450px;
+    border-radius: 5px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 30px;
+}
+
+.form span {
+    margin-top: 30px;
+}
+
+.form span {
+    width: 90%;
+}
+
+.username {
+    height: 40px;
+    width: 100%;
+}
+
+span label{
+    margin-top: -5px;
+    color:grey;
+}
+
+.inputarea {
+    margin-top: 30px;
+    width: 90%;
+    height: 210px;
+}
+
+.form button {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 90px;
+    white-space: nowrap;
+    background: none;
+    border-radius: 3px;
+    border: 1px solid #13B6B0;
+    color: #13B6B0;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.form button:hover {
+    border: 1px solid #00fff7;
+    color: #00fff7;
+
+}
+
+.leftsidecontact p {
+    margin-top: 20px;
+    color: white;
+}

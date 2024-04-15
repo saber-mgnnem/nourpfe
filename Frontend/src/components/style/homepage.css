@@ -1,0 +1,10 @@
+.containerhomepage{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+.seperator{
+    height: 4px;
+    background-color: #90C3C8;
+}

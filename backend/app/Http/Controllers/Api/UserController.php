@@ -174,4 +174,18 @@ class UserController extends Controller
         return response()->json(['status' => 200, 'message' => 'Password updated successfully']);
     }
 
+
+
+    public function getUsers(){
+        $users = User::all();
+        return response()->json (
+            [
+                'status'=>200,
+                'users'=> $users
+            ]
+
+
+            );
+    }
+
 }

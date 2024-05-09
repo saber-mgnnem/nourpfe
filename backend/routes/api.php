@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\FormController;
+use App\Http\Controllers\ContactController;
 use Laravel\Sanctum\Sanctum;
 
 
@@ -27,6 +28,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('register',[AuthController::class, 'register']);
 Route::post('login',[AuthController::class, 'login']);
 Route::post('submit_result_form',[FormController::class, 'postResulteForm']);
+Route::post('StoreContact',[ContactController::class, 'store']);
+
 
 Route::middleware(['auth:sanctum','isAdmin'])->group( function(){
     Route::post('adminlogout',[AuthController::class, 'logout']);
@@ -47,6 +50,9 @@ Route::middleware(['auth:sanctum','isAdmin'])->group( function(){
     Route::delete('/Admin_delete_forme/{id}',[FormController::class, 'destroy']);
     Route::get('AdmingetFormsResult/{companyName}/{uniqueId}',[FormController::class, 'AdminGetfromResulte']);
 
+    Route::get('AdmingetContact',[ContactController::class, 'index']);
+    Route::delete('/Admin_delete_Contact/{id}',[ContactController::class, 'destroy']);
+
 
 
 });
@@ -59,6 +65,7 @@ Route::middleware(['auth:sanctum','isUser'])->group( function(){
         return response()->json(['message'=>'You are in', 'status'=>200], 200);
 
     });
+
     Route::get('get_user/{id}',[UserController::class, 'getuser']);
     Route::put('updatePassword/{id}',[UserController::class, 'updatePassword']);
     Route::put('update_profile/{id}',[UserController::class, 'updateProfile']);

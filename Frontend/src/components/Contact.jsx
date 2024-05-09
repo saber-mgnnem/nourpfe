@@ -1,9 +1,51 @@
 import React, { useState } from 'react'
 import './style/contact.css'
 import contactImg from '../assets/contact.svg'
-import { InputText } from "primereact/inputtext";
+import {  TextareaAutosize, TextField } from '@mui/material';
+import axios from "axios"
+import Swal from 'sweetalert2';
 
 const Contact = () => {
+
+    const [formData, setFormData] = useState({
+        companyName: '',
+        mail: '',
+        message: ''
+      });
+
+
+      const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+      };
+
+
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        axios.get('/sanctum/csrf-cookie').then((response) => {
+                    axios.post('/api/StoreContact', formData)
+                        .then(response => {
+                            if (response.data.status === 200) {
+                                setFormData("");
+                                Swal.fire({
+                                icon: 'success',
+                                title: 'message data envoyer successfully!',
+                                showCancelButton: false,
+                                showConfirmButton: true,
+                                confirmButtonColor: '#3085d6',
+                                confirmButtonText: 'OK',
+                                });
+                            }
+                            else {
+                                swal("warning", "verifier you email  ");
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                    });
+        });
+      };
+
     return (
         <>
             <div className="contactcontainer">
@@ -20,19 +62,63 @@ No matter what you need — whether it's to explore our experience in building g
                             cool projects!</p>
                     </div>
                     <div className="rightsidecontact">
-                        <div className="form">
-                            <span className="p-float-label">
-                                <InputText className="username"/>
-                                <label htmlFor="username">Username</label>
+                    <div className="form">
+                        <form onSubmit={handleSubmit}>
+                        <TextField
+                        fullWidth
+                        label="Nom de Socite"
+                        name="companyName" // Specify the name attribute
+                        value={formData.companyName} 
+                        onChange={handleInputChange}
+                        style={{
+                            marginTop:"20px",
+                            marginBottom:"10px",
+                            padding: '5px',
+                            border: '1px solid #ccc',
+                            borderRadius: '5px',
+                            fontSize: '16px',
+                            fontFamily: 'inherit',
+                            boxSizing: 'border-box',
+                        }}
+                        />
+                        <TextField
+                            fullWidth
+                            label="Email"
+                            name="mail" 
+                            value={formData.mail} 
+                            onChange={handleInputChange}
+                            style={{
+                                marginTop:"2px",
+                                padding: '5px',
+                                border: '1px solid #ccc',
+                                borderRadius: '5px',
+                                fontSize: '16px',
+                                fontFamily: 'inherit',
+                                boxSizing: 'border-box',
+                            }}
+                        />
+                        <TextareaAutosize
+                            placeholder="Message"
+                            name="message" 
+                            value={formData.message}
+                            onChange={handleInputChange}
+                            style={{
+                                marginTop:"2px",
+                                padding: '5px',
+                                border: '1px solid #ccc',
+                                borderRadius: '5px',
+                                marginTop:"20px",
+                                width:"100%",
+                                height:"40%",
+                                fontSize: '16px',
+                                fontFamily: 'inherit',
+                                backgroundColor: 'transparent',
 
-                            </span>
-                            <span className="p-float-label">
-                                <InputText className="username" />
-                                <label htmlFor="username">CompanyEmail</label>
-
-                            </span>
-                            <textarea className='inputarea'></textarea>
-                            <button>Let's talk</button>
+                                boxSizing: 'border-box',
+                            }}
+                        />
+                            <button type="submit">Envoyer</button>
+                        </form>
                         </div>
                     </div>
                 </div>

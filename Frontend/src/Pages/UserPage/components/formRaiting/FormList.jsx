@@ -9,7 +9,7 @@ import UpdateIcon from '@mui/icons-material/Update';
 import swal from 'sweetalert';
 const FormList = () => {
   const[companyName, setCompanyName] =useState("");
-
+  const navigate = useNavigate();
     
   const [viewform , setViewform] = useState([])
   useEffect(() => {
@@ -115,7 +115,7 @@ const FormList = () => {
       
           </Box>
         );}} ];
-  const navigate = useNavigate();
+ 
   return (
     <>
      <Header title="liste de Formaulaire"/>

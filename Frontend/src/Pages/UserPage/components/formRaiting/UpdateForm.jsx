@@ -59,8 +59,7 @@ const UpdateForm = () => {
       )}/${companyName}/${expirationDate}/${uniqueId}`;
 
       axios.get('/sanctum/csrf-cookie').then((response) => {
-        axios
-          .put(`http://127.0.0.1:8000/api/update_form/${id}`, {
+        axios.put(`http://127.0.0.1:8000/api/update_form/${id}`, {
             companyName,
             selectedCriteriaString,
             formLink,
@@ -135,7 +134,7 @@ const UpdateForm = () => {
                 />
               </Box>
               <Button onClick={handleAddCriterion} variant="contained" color="primary" mt={2}>
-                Ajouter un critère
+                Modifier un critère
               </Button>
             </Grid>
             <Grid item xs={4} style={{ borderLeft: '1px solid #ccc', paddingLeft: 20 }}>
@@ -173,7 +172,7 @@ const UpdateForm = () => {
 
             <Grid item xs={12}>
               <Button type="submit" variant="contained" color="primary" mt={2}>
-                Submit
+                Modifier Formulaire
               </Button>
             </Grid>
           </Grid>

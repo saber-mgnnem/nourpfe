@@ -46,6 +46,12 @@ const Sidebar = () => {
               <p style={{marginBottom: 0, marginLeft: 5}}>Liste de formulaire</p>
             </Link>
           </li>
+          <li className="nav-item" style={{display: 'flex', alignItems: 'center'}}>
+            <Link to="/admin/Contact_list" className="nav-link" style={{display: 'flex', alignItems: 'center'}}>
+              <FontAwesomeIcon icon={faList} /> {/* Utilisez l'icône appropriée en fonction du nom */}
+              <p style={{marginBottom: 0, marginLeft: 5}}>Liste de Messages</p>
+            </Link>
+          </li>
           <li className="nav-item" style={{ display: 'flex', alignItems: 'center' }}>
       <Link to="/admin/form_list_resulte" className="nav-link" style={{ display: 'flex', alignItems: 'center' }}>
         <FontAwesomeIcon icon={faFileAlt} /> {/* Use the function to get the appropriate icon */}

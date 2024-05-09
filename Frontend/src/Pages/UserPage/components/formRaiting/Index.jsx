@@ -17,7 +17,7 @@ const Index = () => {
       setCompanyName(parsedUserData.name)
     }
   }, []); 
-  const [basicCriteria, setBasicCriteria] = useState(['Criterion 1', 'Criterion 2', 'Criterion 3','Criterion 4', 'Criterion 5', 'Criterion 6']);
+  const [basicCriteria, setBasicCriteria] = useState(['Qualité des produits', 'Rapidité du service', 'Satisfaction par rapport au service clientèle','Fiabilité des processus de production', 'Propreté et hygiène', 'Sécurité des transactions en ligne', 'Compétence et expertise', 'Réactivité du support technique', 'Efficacité du processus de livraison', 'Sécurité des données']);
 
   const handleCheckboxChange = (criterion) => {
     if (selectedCriteria.includes(criterion)) {
@@ -49,9 +49,9 @@ const Index = () => {
             if(resp.data.status === 200){
               Swal.fire({
                 icon: 'success',
-                title: 'Form data saved successfully!',
+                title: 'Formilaire enregistre avec succeé!',
                 html: `
-                  <p>Share this link with your client:</p>
+                  <p>partager le lgne avec leur clients :</p>
                   <div class="form-link-container">
                     <input type="text" id="formLink" value="${formLink}" readonly>
                     <button onclick="copyLink()" class="copy-button" title="Copy link"><FileCopyIcon /></button>

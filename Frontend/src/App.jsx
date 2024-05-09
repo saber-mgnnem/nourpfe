@@ -12,6 +12,7 @@ import UserHome from './Pages/UserPage/MasterLayout/MasterLayout'
 import axios from 'axios';
 import AdminProfile from "./Pages/AdminPage/components/profil/Profile"
 import AdminUser from "./Pages/AdminPage/components/ListeD'utilisateurs/Index"
+import Contact from './Pages/AdminPage/components/Contact';
 import AddUser from "./Pages/AdminPage/components/ListeD'utilisateurs/AjouterUtilisateur"
 import UpdateUser from "./Pages/AdminPage/components/ListeD'utilisateurs/ModifierUtilisateur"
 import AdminFormListe from "./Pages/AdminPage/components/formsListe/Index"
@@ -60,7 +61,9 @@ function App() {
                 <Route path="/admin/update-form/:id" element={<UpdateForm />} />
                 <Route path="/admin/form_list_resulte" element={< AdminGraph/>} />
                 <Route path="/admin/graphe/:companyName/:uiqueId" element={<AdminFormGraphe />} />
+                <Route path="/admin/Contact_list" element={<Contact />} />
 
+                
               </Route>
 
           </Route>
